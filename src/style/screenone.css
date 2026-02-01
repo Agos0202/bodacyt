@@ -1,0 +1,52 @@
+.screen1-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #081b40 0%, #0d2f5f 100%);
+  color: white;
+  text-align: center;
+  font-family: "Perpetua Titling MT", serif;
+}
+
+.screen1-container h1,
+.screen1-container h3,
+.screen1-container p {
+  margin: 0;
+  padding: 0;
+}
+
+.screen1-title {
+  font-size: clamp(40px, 8vw, 80px);
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.screen1-subtitle {
+  font-size: clamp(18px, 4vw, 28px);
+  margin-bottom: 40px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.screen1-btn {
+  padding: 15px 50px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: white;
+  color: #081b40;
+  border: none;
+}
+
+.screen1-btn:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
