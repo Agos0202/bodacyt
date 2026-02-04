@@ -299,7 +299,8 @@ html, body {
   width: 100%;
   height: auto;
   max-height: 500px;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.4s ease;
@@ -435,6 +436,103 @@ html, body {
   font-weight: 400;
 }
 
+/* ----- Regalos ----- */
+.regalo {
+  border: 3px solid #081b40;
+  border-radius: 20px;
+  padding: 30px 20px;
+  margin: 40px 0;
+  background-color: #081b40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.regalo-texto {
+  font-family: "Perpetua Titling MT", serif;
+  font-size: clamp(18px, 3.5vw, 26px);
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.btn-regalo {
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-size: clamp(16px, 3vw, 18px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  background-color: #081b40;
+  color: #ffffff;
+  border: none;
+  letter-spacing: 0.5px;
+}
+
+.btn-regalo:hover {
+  background-color: #0d2f5f;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ----- Modal Datos Bancarios ----- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-title {
+  font-family: "Perpetua Titling MT", serif;
+  font-size: clamp(20px, 4vw, 28px);
+  color: #081b40;
+  margin: 0 0 15px 0;
+}
+
+.modal-body {
+  font-size: clamp(14px, 3vw, 18px);
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-family: "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.btn-modal-close {
+  padding: 10px 28px;
+  border-radius: 30px;
+  font-size: clamp(14px, 3vw, 16px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  background-color: #081b40;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-modal-close:hover {
+  background-color: #0d2f5f;
+  transform: scale(1.03);
+}
+
 /* ----- Salón ----- */
 .salon {
   background-color: #081b40;
@@ -566,14 +664,14 @@ html, body {
   .novios { width: 80%; }
   .sl { font-size: 50px; }
   .texto { font-size: 36px; padding: 15px 20px; }
-  .carrusel-img { height: 350px; }
+  .carrusel-img { height: auto; max-height: 350px; }
 }
 
 @media (max-width: 480px) {
   .sl { font-size: 36px; }
   .texto { font-size: 30px; }
   .carrusel { width: 90%; }
-  .carrusel-img { height: 250px; }
+  .carrusel-img { height: auto; max-height: 250px; }
 }
 
 /* ----- Footer ----- */
@@ -592,4 +690,15 @@ html, body {
   margin: 0;
   letter-spacing: 0.5px;
   font-weight: 300;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
 }

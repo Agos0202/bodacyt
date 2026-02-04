@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import Novio from "../img/novio4.jpg";
-import Foto2 from "../img/novio1.jpg";
-import Foto3 from "../img/novio2.jpg";
-import Foto4 from "../img/novio3.jpg";
+import Novio from "../img/novio4.jpeg";
+import Foto2 from "../img/novio1.jpeg";
+import Foto3 from "../img/novio2.jpeg";
+import Foto4 from "../img/novio3.jpeg";
 import iglesia from "../img/iglesia.png";
 import cena from "../img/cena.png";
-import baile from "../img/baile.png";
+import anillo from "../img/anillo.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,9 +19,10 @@ function ScreenTwo() {
     minutes: 0,
     seconds: 0,
   });
+  const [isBancoOpen, setIsBancoOpen] = useState(false);
 
   useEffect(() => {
-    const eventDate = new Date("february 28, 2026 21:00:00").getTime();
+    const eventDate = new Date("february 26, 2026 21:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -83,13 +84,20 @@ function ScreenTwo() {
     pauseOnHover: true,
   };
 
+  const datosBancarios = {
+       titular: "Maria Cecilia Marcos",
+       cbu: "0000003100011025620971",
+       alias: "maria.cecy.marcos",
+ 
+  };
+
   return (
     <div className="app-container w-100">
       <header className="header w-100">
         <h3 className="sl">¡NOS CASAMOS!</h3>
         <img src={Novio} className="novios img-fluid" alt="novios" />
-        <h3 className="sl">SOFIA & LAUTARO</h3>
-        <h4 className="fechafiesta">- 15/11/2025 -</h4>
+        <h3 className="sl">CECILIA & TOMAS</h3>
+        <h4 className="fechafiesta">- 26/02/2026 -</h4>
       </header>
 
       {/* Sección de Música */}
@@ -98,7 +106,7 @@ function ScreenTwo() {
         <div className="music-player">
           <audio id="audioPlayer" preload="metadata">
             <source 
-              src="/Perfect.mp3" 
+              src="/Llegaste tu.mp3" 
               type="audio/mpeg"
             />
             Tu navegador no soporta audio HTML5.
@@ -134,8 +142,8 @@ function ScreenTwo() {
 
       <div className="w-100 px-3 px-md-5">
         <p className="texto">
-          Todos los días juntos son días maravillosos y queremos que nos acompañen
-          en el momento más importante de nuestras vidas.
+          Encontrarnos fue maravilloso y queremos que nos acompañes en el momento más importante de nuestras vidas.
+          "DAR EL SÍ PARA SIEMPRE"
         </p>
 
         <div className="cuenta-regresiva">
@@ -162,13 +170,13 @@ function ScreenTwo() {
 
         {/* Sección del salón */}
         <div className="salon w-100">
-          <h1>SALÓN "LAS MARIAS"</h1>
+          <h1>SALÓN FINCA LOPEZ </h1>
           <h2 className="salon-subtitulo">
-            RP338, San Miguel de Tucumán, Tucumán
+            RP302-KM 15,Ranchillos,Tucumán.
           </h2>
-          <h3 className="salon-fecha">15 de Noviembre de 2025</h3>
+          <h3 className="salon-fecha">26 de Febrero de 2026</h3>
           <a
-            href="https://maps.app.goo.gl/1x22tanXTvktoYPA6"
+            href="https://maps.app.goo.gl/gKkkix9XPRwdd5C56"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -181,30 +189,35 @@ function ScreenTwo() {
           <h1>ITINERARIO DE LA FIESTA</h1>
 
           <div className="row w-100 g-4">
+            
+            <div className="col-md-4 col-12">
+              <div className="evento">
+                <img src={anillo} alt="baile" className="itinerarioimg img-fluid" />
+                <h4 className="itinerariotext">CIVIL</h4>
+                 <h5 className="itinerariop">Juzgado de Paz - Ranchillos</h5>
+                <h5 className="itinerariop">11:00hs</h5>
+              </div>
+            </div>
+
             <div className="col-md-4 col-12">
               <div className="evento">
                 <img src={iglesia} alt="iglesia" className="itinerarioimg img-fluid" />
-                <h4 className="itinerariotext">CEREMONIA</h4>
-                <h5 className="itinerariop">Iglesia Nuestra Señora del Valle</h5>
-                <h5 className="itinerariop">20:30hs</h5>
+                <h4 className="itinerariotext">CEREMONIA RELIGIOSA</h4>
+                <h5 className="itinerariop">Parroquia Espíritu Santo</h5>
+                <h5 className="itinerariop">Ranchillos,Tucumán.</h5>
+                <h5 className="itinerariop">12:15hs</h5>
               </div>
             </div>
 
             <div className="col-md-4 col-12">
               <div className="evento">
                 <img src={cena} alt="cena" className="itinerarioimg img-fluid" />
-                <h4 className="itinerariotext">CENA</h4>
-                <h5 className="itinerariop">22:00hs</h5>
+                <h4 className="itinerariotext">ALMUERZO</h4>
+                <h5 className="itinerariop">13:00hs</h5>
               </div>
             </div>
 
-            <div className="col-md-4 col-12">
-              <div className="evento">
-                <img src={baile} alt="baile" className="itinerarioimg img-fluid" />
-                <h4 className="itinerariotext">BAILE</h4>
-                <h5 className="itinerariop">00:00hs</h5>
-              </div>
-            </div>
+            
           </div>
         </div>
 
@@ -225,11 +238,59 @@ function ScreenTwo() {
             </Slider>
           </div>
         </div>
+
+        {/* Regalos */}
+        <div className="regalo">
+          <p className="regalo-texto">
+            Tu presencia es el regalo más importante.
+            Si aun así querés obsequiarnos algo, preferimos transferencia.
+          </p>
+          <button
+            className="btn btn-light btn-lg btn-regalo"
+            onClick={() => setIsBancoOpen(true)}
+          >
+            Ver datos bancarios
+          </button>
+        </div>
       </div>
+
+      {isBancoOpen && (
+        <div
+          className="modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Datos bancarios"
+          onClick={() => setIsBancoOpen(false)}
+        >
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h3 className="modal-title">Datos bancarios</h3>
+            <div className="modal-body">
+              <p><strong>CBU:</strong> {datosBancarios.cbu}</p>
+              <p><strong>Alias:</strong> {datosBancarios.alias}</p>
+              <p><strong>Nombre de la cuenta:</strong> {datosBancarios.titular}</p>
+            </div>
+            <button
+              className="btn btn-light btn-lg btn-modal-close"
+              onClick={() => setIsBancoOpen(false)}
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="footer w-100">
-        <p className="footer-text">Desarrollo web Agostina Jimenez</p>
+        <p className="footer-text">
+          <a 
+            href="https://wa.me/5493813670162" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Desarrollo web Agostina Jimenez
+          </a>
+        </p>
       </footer>
     </div>
   );
