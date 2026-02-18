@@ -71,7 +71,7 @@ function ScreenTwo() {
       <header className="header w-100">
         <h3 className="sl">¡NOS CASAMOS!</h3>
         <img src={Novio} className="novios img-fluid" alt="novios" />
-        <h3 className="sl">SOFIA & LAUTARO</h3>
+        <h3 className="sl">CECILIA & TOMAS</h3>
         <h4 className="fechafiesta">- 26/02/2026 -</h4>
       </header>
 
