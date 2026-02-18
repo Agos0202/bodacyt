@@ -22,7 +22,7 @@ function ScreenTwo() {
   const [isBancoOpen, setIsBancoOpen] = useState(false);
 
   useEffect(() => {
-    const eventDate = new Date("february 26, 2026 21:00:00").getTime();
+    const eventDate = new Date("february 26, 2026 11:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -180,7 +180,7 @@ function ScreenTwo() {
               <div className="evento h-100">
                 <img src={anillo} alt="civil" className="itinerarioimg img-fluid" />
                 <h4 className="itinerariotext">CIVIL</h4>
-                 <h5 className="itinerariop">Registro Civil Centro</h5>
+                 <h5 className="itinerariop">Juzgado de Paz - Ranchillos</h5>
                 <h5 className="itinerariop">11:00hs</h5>
               </div>
             </div>
@@ -189,8 +189,8 @@ function ScreenTwo() {
               <div className="evento h-100">
                 <img src={iglesia} alt="iglesia" className="itinerarioimg img-fluid" />
                 <h4 className="itinerariotext">CEREMONIA RELIGIOSA</h4>
-                <h5 className="itinerariop">Iglesia San Francisco</h5>
-                <h5 className="itinerariop">Ciudad de Buenos Aires</h5>
+                <h5 className="itinerariop">Parroquia Espíritu Santo</h5>
+                <h5 className="itinerariop">Ranchillos, Tucumán.</h5>
                 <h5 className="itinerariop">12:15hs</h5>
               </div>
             </div>
