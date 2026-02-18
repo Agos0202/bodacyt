@@ -16,7 +16,7 @@ function ScreenTwo() {
   });
 
   useEffect(() => {
-    const eventDate = new Date(2026, 1, 26, 11, 0, 0).getTime();
+    const eventDate = new Date(2026, 2, 26, 11, 0, 0).getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
