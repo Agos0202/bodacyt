@@ -16,14 +16,13 @@ function ScreenTwo() {
   });
 
   useEffect(() => {
-    const eventDate = new Date("february 26, 2026 11:00:00").getTime();
+    const eventDate = new Date(2026, 1, 26, 11, 0, 0).getTime();
 
-    const interval = setInterval(() => {
+    const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = eventDate - now;
 
       if (distance < 0) {
-        clearInterval(interval);
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
@@ -38,7 +37,10 @@ function ScreenTwo() {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       setTimeLeft({ days, hours, minutes, seconds });
-    }, 1000);
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(interval);
   }, []);
