@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
 import Novio from "../img/novio4.jpeg";
-import Foto2 from "../img/novio1.jpeg";
-import Foto3 from "../img/novio2.jpeg";
-import Foto4 from "../img/novio3.jpeg";
 import iglesia from "../img/iglesia.png";
-import cena from "../img/cena.png";
 import anillo from "../img/anillo.png";
 
 import "slick-carousel/slick/slick.css";
@@ -19,7 +14,6 @@ function ScreenTwo() {
     minutes: 0,
     seconds: 0,
   });
-  const [isBancoOpen, setIsBancoOpen] = useState(false);
 
   useEffect(() => {
     const eventDate = new Date("february 26, 2026 11:00:00").getTime();
@@ -71,25 +65,6 @@ function ScreenTwo() {
       };
     }
   }, []);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    pauseOnHover: true,
-  };
-
-  const datosBancarios = {
-       titular: "Sofia Rodriguez",
-       cbu: "1234567890123456789012",
-       alias: "sofia.lautaro.boda",
- 
-  };
 
   return (
     <div className="app-container w-100">
