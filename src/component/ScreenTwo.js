@@ -85,9 +85,9 @@ function ScreenTwo() {
   };
 
   const datosBancarios = {
-       titular: "Maria Cecilia Marcos",
-       cbu: "0000003100011025620971",
-       alias: "maria.cecy.marcos",
+       titular: "Sofia Rodriguez",
+       cbu: "1234567890123456789012",
+       alias: "sofia.lautaro.boda",
  
   };
 
@@ -96,7 +96,7 @@ function ScreenTwo() {
       <header className="header w-100">
         <h3 className="sl">¡NOS CASAMOS!</h3>
         <img src={Novio} className="novios img-fluid" alt="novios" />
-        <h3 className="sl">CECILIA & TOMAS</h3>
+        <h3 className="sl">SOFIA & LAUTARO</h3>
         <h4 className="fechafiesta">- 26/02/2026 -</h4>
       </header>
 
@@ -106,7 +106,7 @@ function ScreenTwo() {
         <div className="music-player">
           <audio id="audioPlayer" preload="metadata">
             <source 
-              src="/Llegaste tu.mp3" 
+              src="/Perfect.mp3" 
               type="audio/mpeg"
             />
             Tu navegador no soporta audio HTML5.
@@ -168,116 +168,36 @@ function ScreenTwo() {
           </div>
         </div>
 
-        {/* Sección del salón */}
-        <div className="salon w-100">
-          <h1>SALÓN FINCA LOPEZ </h1>
-          <h2 className="salon-subtitulo">
-            RP302-KM 15,Ranchillos,Tucumán.
-          </h2>
-          <h3 className="salon-fecha">26 de Febrero de 2026</h3>
-          <a
-            href="https://maps.app.goo.gl/gKkkix9XPRwdd5C56"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="btn btn-light btn-lg btn-salon">Ver Ubicación</button>
-          </a>
-        </div>
+        
 
         {/* Itinerario */}
         <div className="itinerario">
           <h1>ITINERARIO DE LA FIESTA</h1>
 
-          <div className="row w-100 g-4">
+          <div className="row w-100 g-4 itinerario-grid justify-content-center">
             
-            <div className="col-md-4 col-12">
-              <div className="evento">
-                <img src={anillo} alt="baile" className="itinerarioimg img-fluid" />
+            <div className="col-12 col-sm-10 col-md-6 col-xl-5 itinerario-col">
+              <div className="evento h-100">
+                <img src={anillo} alt="civil" className="itinerarioimg img-fluid" />
                 <h4 className="itinerariotext">CIVIL</h4>
-                 <h5 className="itinerariop">Juzgado de Paz - Ranchillos</h5>
+                 <h5 className="itinerariop">Registro Civil Centro</h5>
                 <h5 className="itinerariop">11:00hs</h5>
               </div>
             </div>
 
-            <div className="col-md-4 col-12">
-              <div className="evento">
+            <div className="col-12 col-sm-10 col-md-6 col-xl-5 itinerario-col">
+              <div className="evento h-100">
                 <img src={iglesia} alt="iglesia" className="itinerarioimg img-fluid" />
                 <h4 className="itinerariotext">CEREMONIA RELIGIOSA</h4>
-                <h5 className="itinerariop">Parroquia Espíritu Santo</h5>
-                <h5 className="itinerariop">Ranchillos,Tucumán.</h5>
+                <h5 className="itinerariop">Iglesia San Francisco</h5>
+                <h5 className="itinerariop">Ciudad de Buenos Aires</h5>
                 <h5 className="itinerariop">12:15hs</h5>
               </div>
             </div>
-
-            <div className="col-md-4 col-12">
-              <div className="evento">
-                <img src={cena} alt="cena" className="itinerarioimg img-fluid" />
-                <h4 className="itinerariotext">ALMUERZO</h4>
-                <h5 className="itinerariop">13:00hs</h5>
-              </div>
-            </div>
-
-            
           </div>
         </div>
 
-        {/* Carrusel */}
-        <div className="carrusel">
-          <p className="texto">¡NUESTRA HISTORIA!</p>
-          <div className="carrusel-wrapper">
-            <Slider {...settings}>
-              <div>
-                <img src={Foto2} alt="foto2" className="carrusel-img img-fluid" />
-              </div>
-              <div>
-                <img src={Foto3} alt="foto3" className="carrusel-img img-fluid" />
-              </div>
-              <div>
-                <img src={Foto4} alt="foto4" className="carrusel-img img-fluid" />
-              </div>
-            </Slider>
-          </div>
-        </div>
-
-        {/* Regalos */}
-        <div className="regalo">
-          <p className="regalo-texto">
-            Tu presencia es el regalo más importante.
-            Si aun así querés obsequiarnos algo, preferimos transferencia.
-          </p>
-          <button
-            className="btn btn-light btn-lg btn-regalo"
-            onClick={() => setIsBancoOpen(true)}
-          >
-            Ver datos bancarios
-          </button>
-        </div>
       </div>
-
-      {isBancoOpen && (
-        <div
-          className="modal-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Datos bancarios"
-          onClick={() => setIsBancoOpen(false)}
-        >
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h3 className="modal-title">Datos bancarios</h3>
-            <div className="modal-body">
-              <p><strong>CBU:</strong> {datosBancarios.cbu}</p>
-              <p><strong>Alias:</strong> {datosBancarios.alias}</p>
-              <p><strong>Nombre de la cuenta:</strong> {datosBancarios.titular}</p>
-            </div>
-            <button
-              className="btn btn-light btn-lg btn-modal-close"
-              onClick={() => setIsBancoOpen(false)}
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Footer */}
       <footer className="footer w-100">
